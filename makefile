@@ -1,5 +1,5 @@
 CC = g++
-flags = -Wall -O3
+flags = -std=c++11 -Wall -O3
 
 main: graph.o dfs.o detect.o cycle.o config.o
 	$(CC) $(flags) graph.o dfs.o detect.o cycle.o config.o main.cc -o clsd
