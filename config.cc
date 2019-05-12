@@ -167,7 +167,7 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 			}
 		}
 		ME = 1.0*multiedges/(multiedges+edges);
-		GD = (2.0*m)/(n*(n-1));
+		GD = (1.0*m)/(n*(n-1));
 			//CC
 		CC = 0;
 		std::stack<Vertex*> nexts;
@@ -452,7 +452,9 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 	long unsigned int S=0 ;
 	long unsigned int ms=0 ;
 	long unsigned int C=0 ;
-	long unsigned int P=0 ;
+	long unsigned int CS=0;
+	long unsigned int localCS=0;
+	long unsigned int P=0;
 	long unsigned int vssum=0 ;
 	long unsigned int essum=0 ;
 	long unsigned int APsum=0 ;
@@ -495,6 +497,9 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 					C++;
 					vssum += bubblsize;
 					essum += bubbledgesize;
+					if (localCS> CS) {
+						CS = localCS;
+					}
 					if (start-> exit) {
 						vssum--;
 					}
@@ -503,7 +508,9 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 			if (start-> exit && !(start == o.end && !first)) {
 				if (bubs.empty()) {
 					start->setPaths(1);
+					localCS = 0;
 				}
+				localCS++;
 				long unsigned int* bub = new long unsigned int[3];
 				bub[0] = pos;
 				bub[1] = edges;
@@ -613,15 +620,7 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 	}
 	
 	if (undirected) {
-		*output << "n & m & ME & deg & GD & CC & r & ss & ";
-	}
-	if (directed) {
-		*output << "inDeg & outDeg & SCC & BE & rinin & rinout & routin & routout & H & ";
-	}
-	*output << "S & vs & es & ms & maxVS & maxES & C & deepC & P & pl & AP & apl & SD";
-	*output << " \\\\\n";
-	
-	if(undirected) {
+		*output << "N & M & ME & deg & GD & CC & R & SS \\\\\n";
 		*output << n << " & ";
 		*output << m << " & ";
 		*output << ME << " & ";
@@ -629,10 +628,11 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 		*output << GD << " & ";
 		*output << CC << " & ";
 		*output << r << " & ";
-		*output << ss << " & ";
+		*output << ss << " \\\\\n";
+
 	}
-	
 	if (directed) {
+		*output << " $deg_\\leftarrow$ & $deg_\\rightarrow$ & SCC & BE & $R_{\\leftarrow\\leftarrow}$ & $R_{\\leftarrow\\rightarrow}$ & $R_{\\rightarrow\\leftarrow}$ & $R_{\\rightarrow\\rightarrow}$ & H \\\\\n";
 		*output << inDeg << " & ";
 		*output << outDeg << " & ";
 		*output << SCC << " & ";
@@ -641,9 +641,9 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 		*output << rinout << " & ";
 		*output << routin << " & ";
 		*output << routout << " & ";
-		*output << H << " & ";
+		*output << H << " \\\\\n";
 	}
-	
+	*output << "S & VS & ES & MS & mVS & mES & C & CS & depth & P & PL & aP & aPL & SD  \\\\\n";
 	*output << S << " & ";
 	*output << vs << " & ";
 	*output << es << " & ";
@@ -651,6 +651,7 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 	*output << maxVS << " & ";
 	*output << maxES << " & ";
 	*output << C << " & ";
+	*output << CS << " & ";
 	*output << deepC << " & ";
 	if (!overflow) {
 		*output << P << " & ";
