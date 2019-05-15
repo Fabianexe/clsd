@@ -1,7 +1,9 @@
 # clsd
-An c++ implementation of the LSD algorithm to detect super bubbles
+An c++ implementation of the LSD algorithm to detect super bubbles.
+
 
 ##Install
+
 To install:
 1. Clone git repro.
 2. Run configure.
@@ -12,11 +14,11 @@ To install:
     make
 ```
 ##Statistics
+
 clsd can compute different stastistics.
 Notet that clsd ignores multi edges. Thus every stastistic is done by ignoring multiple appearence of the same edge.
 The output is a list of numbers sperated by &.
 Before content line is header line. The header shorts mean:
-"$deg_\\leftarrow$ & $deg_\\rightarrow$ & SCC & BE & $R_{\\leftarrow\\leftarrow}$ & $R_{\\leftarrow\\rightarrow}$ & $R_{\\rightarrow\\leftarrow}$ & $R_{\\rightarrow\\rightarrow}$ & H
 
 ### Graph Properties
 | Metric                      | Short       | Paper    | Description    |
