@@ -6,11 +6,11 @@ To install:
 1. Clone git repro.
 2. Run configure.
 3. Run make.
-
+```
     git clone git@github.com:Fabianexe/clsd.git
     ./configure 
 	make
-
+```
 ##Statistics
 clsd can compute different stastistics.
 Notet that clsd ignores multi edges. Thus every stastistic is done by ignoring multiple appearence of the same edge.
