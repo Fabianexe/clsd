@@ -2,7 +2,7 @@
 An c++ implementation of the LSD algorithm to detect super bubbles.
 
 
-##Install
+## Install
 
 To install:
 1. Clone git repro.
@@ -13,7 +13,7 @@ To install:
     ./configure 
     make
 ```
-##Statistics
+## Statistics
 
 clsd can compute different stastistics.
 Notet that clsd ignores multi edges. Thus every stastistic is done by ignoring multiple appearence of the same edge.
