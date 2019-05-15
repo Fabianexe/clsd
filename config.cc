@@ -632,7 +632,7 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 
 	}
 	if (directed) {
-		*output << " $deg_\\leftarrow$ & $deg_\\rightarrow$ & SCC & BE & $R_{\\leftarrow\\leftarrow}$ & $R_{\\leftarrow\\rightarrow}$ & $R_{\\rightarrow\\leftarrow}$ & $R_{\\rightarrow\\rightarrow}$ & H \\\\\n";
+		*output << "$deg_\\leftarrow$ & $deg_\\rightarrow$ & SCC & BE & $R_{\\leftarrow\\leftarrow}$ & $R_{\\leftarrow\\rightarrow}$ & $R_{\\rightarrow\\leftarrow}$ & $R_{\\rightarrow\\rightarrow}$ & H \\\\\n";
 		*output << inDeg << " & ";
 		*output << outDeg << " & ";
 		*output << SCC << " & ";
