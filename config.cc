@@ -802,18 +802,40 @@ void Config::parseParameter(int argc, char* argv[]) {
 	for (size_t i = 2; i < args.size(); ++i) {
 		if (args[i] == "-p") {
 			order = true;
-			orderpath = args[++i];
+			i++;
+			if (i >= args.size()  || (args[i].rfind("-", 0) == 0 && args[i] != "-") ) {
+				std::cerr << "\n\nError: Give a path after -p!\n\n";
+				exit(1);
+			}
+			orderpath = args[i];
 		}
 		else if (args[i] == "-s") {
 			stats = true;
-			statspath = args[++i];
+			i++;
+			if (i >= args.size()  || (args[i].rfind("-", 0) == 0 && args[i] != "-") ) {
+				std::cerr << "\n\nError: Give a path after -s!\n\n";
+				exit(1);
+			}
+			statspath = args[i];
 		}
 		else if (args[i] == "-t") {
 			trees = true;
-			treespath = args[++i];
+			i++;
+			if (i >= args.size()  || (args[i].rfind("-", 0) == 0 && args[i] != "-") ) {
+				std::cerr << "\n\nError: Give a path after -t!\n\n";
+				exit(1);
+			}
+
+			treespath = args[i];
 		}
 		else if (args[i] == "-o") {
-			outpath = args[++i];
+			i++;
+			if (i >= args.size()  || (args[i].rfind("-", 0) == 0 && args[i] != "-") ) {
+				std::cerr << "\n\nError: Give a path after -o!\n\n";
+				exit(1);
+			}
+
+			outpath = args[i];
 		}
 		else if (args[i] == "-n") {
 			noout = true;

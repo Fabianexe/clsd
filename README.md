@@ -9,7 +9,7 @@ To install:
 ```
     git clone git@github.com:Fabianexe/clsd.git
     ./configure 
-	make
+    make
 ```
 ##Statistics
 clsd can compute different stastistics.
