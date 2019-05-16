@@ -8,10 +8,6 @@ config.status
 config_ac.h
 stamp-h1
 
-config.o
-cycle.o
-detect.o
-dfs.o
-graph.o
-main.o
+*.o
 clsd
+
