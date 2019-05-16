@@ -1,22 +1,14 @@
 .deps/
 Makefile
-Makefile.in
 aclocal.m4
 autom4te.cache/
 autoscan.log
-compile
 config.log
 config.status
-config_ac.h.in
-depcomp
-install-sh
-missing
+config_ac.h
 stamp-h1
+clsd-*.tar.gz
 
-config.o
-cycle.o
-detect.o
-dfs.o
-graph.o
-main.o
+*.o
 clsd
+
