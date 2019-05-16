@@ -10,9 +10,31 @@ To install:
 3. Run make.
 ```
     git clone git@github.com:Fabianexe/clsd.git
+    cd clsd
     ./configure 
     make
 ```
+
+## Inpute
+clsd needs a edge list as input file. 
+The formate is that in every line is one edge. where the labels of the vertices are seperated by a space or tab.
+As example a graph with the directed edges: 1->2, 1->3, 2->4, and 3->4 would have this file:
+```
+1 2
+1 3
+2 4
+3 4
+```
+
+The file could contain multi edges but the parser ignores them because they have no information of superbubbles.
+Many edgelist writes put properties behinde this for example an edge 1->2 with a weight 0.2 would look like:
+```
+1 2 0.5
+```
+This is also possible but again clsd ignores the weights.
+
+
+
 ## Statistics
 
 clsd can compute different stastistics.

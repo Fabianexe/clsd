@@ -792,7 +792,7 @@ void Config::parseParameter(int argc, char* argv[]) {
 	outpath = "-";
 	if (argc <2 || std::string(argv[1]).rfind("-", 0) == 0) {
 		writeHelp();
-		std::cerr << "\n\nError: Give at least a path as input file!\n\n";
+		std::cerr << "\n\nError: Give at least a path to the input file!\n\n";
 		exit(1);
 	}
 	else {
