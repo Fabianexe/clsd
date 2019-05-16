@@ -29,7 +29,7 @@ As example a graph with the directed edges: 1->2, 1->3, 2->4, and 3->4 would hav
 The file could contain multi edges but the parser ignores them because they have no information of superbubbles.
 Many edgelist writes put properties behinde this for example an edge 1->2 with a weight 0.2 would look like:
 ```
-1 2 0.5
+1 2 0.2
 ```
 This is also possible but again clsd ignores the weights.
 
