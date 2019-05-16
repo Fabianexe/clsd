@@ -1,16 +1,10 @@
 .deps/
 Makefile
-Makefile.in
 aclocal.m4
 autom4te.cache/
 autoscan.log
-compile
 config.log
 config.status
-config_ac.h.in
-depcomp
-install-sh
-missing
 stamp-h1
 
 config.o
