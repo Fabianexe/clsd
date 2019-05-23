@@ -1,5 +1,5 @@
 # clsd
-An c++ implementation of the LSD algorithm to detect super bubbles.
+A C++ implementation of the LSD algorithm to detect super bubbles.
 
 
 ## Install
@@ -15,10 +15,11 @@ To install:
     make
 ```
 
-## Inpute
-clsd needs a edge list as input file. 
-The formate is that in every line is one edge. where the labels of the vertices are seperated by a space or tab.
-As example a graph with the directed edges: 1->2, 1->3, 2->4, and 3->4 would have this file:
+## Input
+
+clsd needs an edge list as input file.
+The format is that in every line is one edge, where the labels of the vertices are seperated by a space or tab.
+As an example, a graph with the directed edges: 1->2, 1->3, 2->4, and 3->4 would have this file:
 ```
 1 2
 1 3
@@ -26,21 +27,20 @@ As example a graph with the directed edges: 1->2, 1->3, 2->4, and 3->4 would hav
 3 4
 ```
 
-The file could contain multi edges but the parser ignores them because they have no information of superbubbles.
-Many edgelist writes put properties behinde this for example an edge 1->2 with a weight 0.2 would look like:
+The file could contain multi-edges but the parser ignores them because they have no information of superbubbles.
+Many edgelist writes put properties behind this for example an edge 1->2 with a weight 0.2 would look like:
 ```
 1 2 0.2
 ```
 This is also possible but again clsd ignores the weights.
 
 
-
 ## Statistics
 
 clsd can compute different stastistics.
-Notet that clsd ignores multi edges. Thus every stastistic is done by ignoring multiple appearence of the same edge.
+Note that clsd ignores multi-edges. Thus every stastistic is done by ignoring multiple appearence of the same edge.
 The output is a list of numbers sperated by &.
-Before content line is header line. The header shorts mean:
+Before content line is the header line. The header shorts mean:
 
 ### Graph Properties
 | Metric                      | Short       | Paper    | Description    |
@@ -77,15 +77,15 @@ Before content line is header line. The header shorts mean:
 | Number of Mini-Superbubbles | MS           | How many mini superbubbles in the graph i.e. superbubbles with two vertices
 | Max Vertices                | mVS          | What is the maximum of vertices in one superbubble
 | Max Edges                   | mES          | What is the maximum of edges in one superbubble
-| Superbubble Complex         | C            | How many non overlapping superbubble complexes exists
-| Superbubble Complex size    | CS           | The maximum of superbubbles in one complex
-| Deepest Superbubble         | depth        | The maximal deep that a superbubble have
+| Superbubble Complex         | C            | How many non-overlapping superbubble complexes exist
+| Superbubble Complex size    | CS           | The maximum number of superbubbles in one complex
+| Deepest Superbubble         | depth        | The maximal depth that a superbubble have
 | maximal paths in Superbubble| P            | The maximal number of a paths in one superbubble
 | longest path in Superbubble | PL           | The maximal length of a path in a superbubble
 
 #### Non-mini Superbubble Properties
 | Metric                      | Short        | Description    |
 |:---------------------------:|:------------:|:--------------:|
-| Average number of paths     | aP           | The average number of paths in non mini superbubbles
-| Average path lenght         | aPL          | The average path length  in non mini superbubbles
-| Superbubble Density         | SD           | The average value of (2m)/(n(n-1)) for all superbubbles  in non mini superbubbles
+| Average number of paths     | aP           | The average number of paths in non-mini superbubbles
+| Average path length         | aPL          | The average path length  in non-mini superbubbles
+| Superbubble Density         | SD           | The average value of (2m)/(n(n-1)) for all superbubbles  in non-mini superbubbles
