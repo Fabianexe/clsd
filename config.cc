@@ -457,6 +457,8 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 	long unsigned int P=0;
 	long unsigned int vssum=0 ;
 	long unsigned int essum=0 ;
+	long unsigned int vcssum=0 ;
+	long unsigned int ecssum=0 ;
 	long unsigned int APsum=0 ;
 	double SDsum=0 ;
 	
@@ -497,6 +499,13 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 					C++;
 					vssum += bubblsize;
 					essum += bubbledgesize;
+					if (bubblsize!= 2) {
+						vcssum += bubblsize;
+						ecssum += bubbledgesize;
+						if (start-> exit && !start->getNext()->entrance) {
+							vcssum--;
+						}
+					}
 					if (localCS> CS) {
 						CS = localCS;
 					}
@@ -553,7 +562,9 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 	}
 	
 	double vs = 1.0*vssum/n;
-	double es = 1.0*essum/n;
+	double es = 1.0*essum/m;
+	double vcs = 1.0*vcssum/n;
+	double ecs = 1.0*ecssum/m;
 	double AP = 1.0*APsum/(nonmini);
 	double SD = SDsum/nonmini;
 	
@@ -643,11 +654,13 @@ void Config::writeStats(std::vector<Vertex>& vertexList) {
 		*output << routout << " & ";
 		*output << H << " \\\\\n";
 	}
-	*output << "S & VS & ES & MS & mVS & mES & C & CS & depth & P & PL & aP & aPL & SD  \\\\\n";
+	*output << "S & VS & ES & MS & VCS & ECS & mVS & mES & C & CS & depth & P & PL & aP & aPL & SD  \\\\\n";
 	*output << S << " & ";
 	*output << vs << " & ";
 	*output << es << " & ";
 	*output << ms << " & ";
+	*output << vcs << " & ";
+	*output << ecs << " & ";
 	*output << maxVS << " & ";
 	*output << maxES << " & ";
 	*output << C << " & ";

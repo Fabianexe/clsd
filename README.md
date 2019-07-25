@@ -69,19 +69,21 @@ Before content line is the header line. The header shorts mean:
 |Heterogeneity index          | H           | [Entropy and Heterogeneity Measures for Directed Graphs](https://link.springer.com/chapter/10.1007/978-3-642-39140-8_15) | Entropy of neighbor degrees 
 
 ### Superbubble Properties
-| Metric                      | Short        | Description    |
-|:---------------------------:|:------------:|:--------------:|
-| Number of Superbubbles      | S            | How many superbubbles in the graph
-| Vertices Superbubbles       | VS           | The fraction of vertices that are part of a superbubble
-| Edges Superbubbles          | ES           | The fraction of edges that are part of a superbubble
-| Number of Mini-Superbubbles | MS           | How many mini superbubbles in the graph i.e. superbubbles with two vertices
-| Max Vertices                | mVS          | What is the maximum of vertices in one superbubble
-| Max Edges                   | mES          | What is the maximum of edges in one superbubble
-| Superbubble Complex         | C            | How many non-overlapping superbubble complexes exist
-| Superbubble Complex size    | CS           | The maximum number of superbubbles in one complex
-| Deepest Superbubble         | depth        | The maximal depth that a superbubble have
-| maximal paths in Superbubble| P            | The maximal number of a paths in one superbubble
-| longest path in Superbubble | PL           | The maximal length of a path in a superbubble
+| Metric                       | Short        | Description    |
+|:----------------------------:|:------------:|:--------------:|
+| Number of Superbubbles       | S            | How many superbubbles in the graph
+| Vertices Superbubbles        | VS           | The fraction of vertices that are part of a superbubble
+| Edges Superbubbles           | ES           | The fraction of edges that are part of a superbubble
+| Number of Mini-Superbubbles  | MS           | How many mini superbubbles in the graph i.e. superbubbles with two vertices
+| Vertices Complex Superbubbles| VCS          | The fraction of vertices that are part of a complex superbubble
+| Edges Complex Superbubbles   | ECS          | The fraction of edges that are part of a complex superbubble
+| Max Vertices                 | mVS          | What is the maximum of vertices in one superbubble
+| Max Edges                    | mES          | What is the maximum of edges in one superbubble
+| Superbubble Complex          | C            | How many non-overlapping superbubble complexes exist
+| Superbubble Complex size     | CS           | The maximum number of superbubbles in one complex
+| Deepest Superbubble          | depth        | The maximal depth that a superbubble have
+| maximal paths in Superbubble | P            | The maximal number of a paths in one superbubble
+| longest path in Superbubble  | PL           | The maximal length of a path in a superbubble
 
 #### Non-mini Superbubble Properties
 | Metric                      | Short        | Description    |
