@@ -1,3 +1,5 @@
+![logo](https://raw.githubusercontent.com/Fabianexe/clsd/master/logo.png "logo")
+
 # clsd
 A C++ implementation of the LSD algorithm to detect super bubbles.
 
